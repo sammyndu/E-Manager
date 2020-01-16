@@ -1,14 +1,15 @@
 # NuGet restore
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
-WORKDIR /source
+WORKDIR /src
+COPY *.sln .
 COPY EManager3/*.csproj EManager3/
 RUN dotnet restore
 COPY . .
 
 # publish
 FROM build AS publish
-WORKDIR /source/EManager3
-RUN dotnet publish -c Release -o /source/publish
+WORKDIR /src/EManager3
+RUN dotnet publish -c Release -o /src/publish
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
