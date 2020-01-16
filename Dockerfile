@@ -1,7 +1,6 @@
 # NuGet restore
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /source
-COPY *.sln .
 COPY EManager3/*.csproj EManager3/
 RUN dotnet restore
 COPY . .
