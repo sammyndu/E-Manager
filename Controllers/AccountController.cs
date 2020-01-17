@@ -92,7 +92,7 @@ namespace EManager3.Controllers
  
                 IdentityResult result = await userManager.CreateAsync(appUser, user.Password);
                 if (result.Succeeded){
-                    result = await userManager.AddToRoleAsync(appUser, "Admin");
+                    result = await userManager.AddToRoleAsync(appUser, "Employee");
                     if (result.Succeeded){
                         ViewBag.StatusMessage = "Your account has been registered";
                         return View(user);
