@@ -9,7 +9,7 @@ COPY . .
 # publish
 FROM build AS publish
 WORKDIR /src/E-Manager
-RUN dotnet publish -c Release
+RUN dotnet publish -c Release -o EManager3.csproj
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
