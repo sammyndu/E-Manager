@@ -29,11 +29,11 @@ namespace EManager3.Controllers
         }
         public ViewResult Index() => View(roleManager.Roles);
 
-        [Authorize(Roles="Developer")]
+        //[Authorize(Roles="Developer")]
         public IActionResult Create() => View();
 
         [HttpPost]
-        [Authorize(Roles="Developer")]
+        //[Authorize(Roles="Developer")]
         public async Task<IActionResult> Create([Required] string name)
         {
             if (ModelState.IsValid)
@@ -47,7 +47,7 @@ namespace EManager3.Controllers
             return View(name);
         }
         
-        [Authorize(Roles="Developer, Admin")]
+        //[Authorize(Roles="Developer, Admin")]
         public async Task<IActionResult> Update(string id)
         {
 
@@ -68,7 +68,7 @@ namespace EManager3.Controllers
             
         }
 
-        [Authorize(Roles="Developer, Admin")]
+        //[Authorize(Roles="Developer, Admin")]
         [HttpPost]
         public async Task<IActionResult> Update(RoleModification model)
         {
@@ -108,7 +108,7 @@ namespace EManager3.Controllers
         }
 
 
-        [Authorize(Roles="Developer")]
+        //[Authorize(Roles="Developer")]
         [HttpPost]
         public async Task<IActionResult> Delete(string id)
         {
