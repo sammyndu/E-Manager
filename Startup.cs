@@ -36,11 +36,11 @@ namespace EManager3
                     Configuration.GetConnectionString("DefaultConnection")));
             }
             else{
-                //services.AddDbContext<ApplicationDbContext>(options =>
-                //options.UseSqlServer(
-                    //Configuration.GetConnectionString("MSSQLConnection")));
-                 services.AddDbContext<ApplicationDbContext>(options =>
-                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+                services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("MSSQLConnection")));
+//                  services.AddDbContext<ApplicationDbContext>(options =>
+//                  options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             }
             services.AddDefaultIdentity<EManager3User>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
