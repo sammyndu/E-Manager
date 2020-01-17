@@ -38,7 +38,7 @@ namespace EManager3
             else{
                 //services.AddDbContext<ApplicationDbContext>(options =>
                 //options.UseSqlServer(
-                    Configuration.GetConnectionString("MSSQLConnection")));
+                    //Configuration.GetConnectionString("MSSQLConnection")));
                  services.AddDbContext<ApplicationDbContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             }
