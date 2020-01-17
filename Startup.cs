@@ -36,11 +36,11 @@ namespace EManager3
                     Configuration.GetConnectionString("DefaultConnection")));
             }
             else{
-                services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
+                //services.AddDbContext<ApplicationDbContext>(options =>
+                //options.UseSqlServer(
                     Configuration.GetConnectionString("MSSQLConnection")));
-//                 services.AddDbContext<ApplicationDbContext>(options =>
-//                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                 services.AddDbContext<ApplicationDbContext>(options =>
+                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             }
             services.AddDefaultIdentity<EManager3User>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
@@ -60,11 +60,11 @@ namespace EManager3
             }
             else
             {
-                app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
-//                 app.UseExceptionHandler("/Home/Error");
-//                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-//                 app.UseHsts();
+                //app.UseDeveloperExceptionPage();
+                //app.UseDatabaseErrorPage();
+                 app.UseExceptionHandler("/Home/Error");
+                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                 app.UseHsts();
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
