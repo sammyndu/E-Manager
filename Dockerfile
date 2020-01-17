@@ -2,13 +2,13 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 # COPY *.sln .
-# COPY EManager3/*.csproj EManager3/
+COPY E-Manager/*.csproj E-Manager/
 RUN dotnet restore
 COPY . .
 
 # publish
 FROM build AS publish
-WORKDIR /src/EManager3
+WORKDIR /src/E-Manager
 RUN dotnet publish -c Release -o /src/publish
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
