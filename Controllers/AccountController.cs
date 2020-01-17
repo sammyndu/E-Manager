@@ -48,12 +48,12 @@ namespace EManager3.Controllers
                 if (appUser != null)
                 {
                     await signInManager.SignOutAsync();
-                    if (!appUser.isActive){
+                    //if (!appUser.isActive){
                         // StatusMessage = "Your account has not been activated";
-                        ModelState.AddModelError(string.Empty, "Your account has not been activated");
-                        return View(login);
+                        //ModelState.AddModelError(string.Empty, "Your account has not been activated");
+                        //return View(login);
                         // return RedirectToAction("Login");
-                    }
+                    //}
                     Microsoft.AspNetCore.Identity.SignInResult result = await signInManager.PasswordSignInAsync(appUser, login.Password, false, false);
                     if (result.Succeeded)
                         if (await userManager.IsInRoleAsync(appUser, "Admin")){
