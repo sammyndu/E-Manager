@@ -2,7 +2,7 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 # COPY *.sln .
-COPY E-Manager/*.csproj E-Manager/
+COPY /src/E-Manager/*.csproj src/E-Manager/
 RUN dotnet restore
 COPY . .
 
