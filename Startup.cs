@@ -40,7 +40,7 @@ namespace EManager3
                 //options.UseSqlServer(
                     //Configuration.GetConnectionString("MSSQLConnection")));
                  services.AddDbContext<ApplicationDbContext>(options =>
-                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             }
             services.AddDefaultIdentity<EManager3User>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
